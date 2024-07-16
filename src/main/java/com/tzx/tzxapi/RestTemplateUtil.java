@@ -102,7 +102,7 @@ public class RestTemplateUtil {
      */
     private ResponseEntity<String> request(ServletRequest req, String url, HttpMethod method, Map<String, ?> params) {
         HttpServletRequest request = (HttpServletRequest) req;
-        //获取header信息
+
         HttpHeaders requestHeaders = new HttpHeaders();
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
@@ -110,7 +110,7 @@ public class RestTemplateUtil {
             String value = request.getHeader(key);
             requestHeaders.add(key, value);
         }
-        //获取parameter信息
+
         if (params == null) {
             params = request.getParameterMap();
         }
